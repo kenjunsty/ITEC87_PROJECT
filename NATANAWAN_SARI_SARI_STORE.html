@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sari-Sari Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-color: lightyellow;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+       thead th {
+            background-color: #f2f2f2; 
+            color: #333; 
+            font-family: cursive; 
+        }
+       .logo-container {
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-family: cursive;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+	.item-name {
+     display: flex;
+    align-items: center;
+}
+
+.item-image {
+    max-width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; 
+    text-align: center;
+}
+	    </style>
+</head>
+<body>
+    <div class="container">
+<div class="logo-container">
+        <img src="D:\ITEC87_PROJECT\images\logo.jpg.jpg" alt="Store Logo" style="display: block; margin: 0 auto; max-width: 200px; height: auto; margin-bottom: 20px;">
+        <h2>KN SARI SARI STORE</h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ITEMS</th>
+                    <th>PRICE</th>
+                    <th>STOCKS</th>
+                    <th>QUANTITY</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>
+	   <span class="item-name"><b>Straight Jeans</b></span>
+        <img src="D:\ITEC87_PROJECT\images\straight jeans.jpg" alt="jeans" class="item-image">
+    </div>
+</td>
+                    <td><b>800.00</b></td>
+                    <td><span id="straightStocks">50</span></td>
+                    <td><input type="number" id="straightQuantity" value="0" min="0" onchange="calculateTotal('straight')"></td>
+                    <td><span id="straightTotal">0</span></td>
+                </tr>
+                <tr>
+                    <td><span class="item-name"><b>Baggy Jeans</span>
+        <img src="D:\ITEC87_PROJECT\images\baggy jeans.jpg" alt="jeans" class="item-image">
+    </div>
+</td>
+                    <td><b>750.00</td>
+                    <td><span id="slimStocks">50</span></td>
+                    <td><input type="number" id="slimQuantity" value="0" min="0" onchange="calculateTotal('slim')"></td>
+                    <td><span id="slimTotal">0</span></td>
+                </tr>
+                <tr>
+                    <td><span class="item-name"><b>Ripped Jeans</span>
+        <img src="D:\ITEC87_PROJECT\images\ripped jeans.jpg" alt="jeans" class="item-image">
+    </div>
+</td>
+                    <td><b>850.00</td>
+                    <td><span id="wideStocks">50</span></td>
+                    <td><input type="number" id="wideQuantity" value="0" min="0" onchange="calculateTotal('wide')"></td>
+                    <td><span id="wideTotal">0</span></td>
+                </tr>
+                <tr>
+                    <td><span class="item-name"><b>Skinny Jeans</span>
+        <img src="D:\ITEC87_PROJECT\images\skinny jeans.jpg" alt="jeans" class="item-image">
+    </div>
+</td>
+                    <td><b>850.00</td>
+                    <td><span id="flaredStocks">50</span></td>
+                    <td><input type="number" id="flaredQuantity" value="0" min="0" onchange="calculateTotal('flared')"></td>
+                    <td><span id="flaredTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Polo Shirt</span>
+        <img src="D:\ITEC87_PROJECT\images\polo shirt.jpg" alt="shirt" class="item-image">
+    </div>
+</td>
+                    <td><b>200.00</td>
+                    <td><span id="osStocks">50</span></td>
+                    <td><input type="number" id="osQuantity" value="0" min="0" onchange="calculateTotal('os')"></td>
+                    <td><span id="osTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Muscle Shirt</span>
+        <img src="D:\ITEC87_PROJECT\images\muscle shirt.jpg" alt="shirt" class="item-image">
+
+    </div>
+</td>
+                    <td><b>400.00</td>
+                    <td><span id="fitStocks">50</span></td>
+                    <td><input type="number" id="fitQuantity" value="0" min="0" onchange="calculateTotal('fit')"></td>
+                    <td><span id="fitTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Pocket Tee</span>
+         <img src="D:\ITEC87_PROJECT\images\pocket tee.jpg" alt="shirt" class="item-image">
+
+    </div>
+</td>
+                    <td><b>350.00</td>
+                    <td><span id="henleyStocks">50</span></td>
+                    <td><input type="number" id="henleyQuantity" value="0" min="0" onchange="calculateTotal('henley')"></td>
+                    <td><span id="henleyTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>V-Neck</span>
+        <img src="D:\ITEC87_PROJECT\images\V neck.jpg" alt="shirt" class="item-image">
+
+    </div>
+</td>
+                    <td><b>250.00</td>
+                    <td><span id="vStocks">50</span></td>
+                    <td><input type="number" id="vQuantity" value="0" min="0" onchange="calculateTotal('v')"></td>
+                    <td><span id="vTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Eau De Colone</span>
+        <img src="D:\ITEC87_PROJECT\images\eau de colone.jpg" alt="perfume" class="item-image">
+    </div>
+</td>
+                    <td><b>200.00</td>
+                    <td><span id="mistsStocks">50</span></td>
+                    <td><input type="number" id="mistsQuantity" value="0" min="0" onchange="calculateTotal('mists')"></td>
+                    <td><span id="mistsTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Fruity Scents</span>
+        <img src="D:\ITEC87_PROJECT\images\fruity scents.jpg" alt="perfume" class="item-image">
+    
+    </div>
+</td>
+                    <td><b>350.00</td>
+                    <td><span id="perfumeStocks">50</span></td>
+                    <td><input type="number" id="perfumeQuantity" value="0" min="0" onchange="calculateTotal('perfume')"></td>
+                    <td><span id="perfumeTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Floral Scents</span>
+       <img src="D:\ITEC87_PROJECT\images\floral scents.jpg" alt="perfume" class="item-image">
+    
+    </div>
+</td>
+                    <td><b>150.00</td>
+                    <td><span id="cologneStocks">50</span></td>
+                    <td><input type="number" id="toothpasteQuantity" value="0" min="0" onchange="calculateTotal('cologne')"></td>
+                    <td><span id="cologneTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Aquatic Scents</span>
+        <img src="D:\ITEC87_PROJECT\images\aquatic scents.jpg" alt="perfume" class="item-image">
+    </div>
+</td>
+                    <td><b>400.00</td>
+                    <td><span id="fraicheStocks">50</span></td>
+                    <td><input type="number" id="fraicheQuantity" value="0" min="0" onchange="calculateTotal('fraiche')"></td>
+                    <td><span id="fraicheTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Tank Top</span>
+        <img src="D:\ITEC87_PROJECT\images\tank top.jpg" alt="sando" class="item-image">
+    </div>
+</td>
+                    <td><b>150.00</td>
+                    <td><span id="muscleStocks">50</span></td>
+                    <td><input type="number" id="muscleQuantity" value="0" min="0" onchange="calculateTotal('muscle')"></td>
+                    <td><span id= "muscleTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Sleeveless Hoddie</span>
+        <img src="D:\ITEC87_PROJECT\images\sleeveless hoddie.jpg" alt="sando" class="item-image">
+
+    </div>
+</td>
+                    <td><b>100.00</td>
+                    <td><span id="tribalStocks">50</span></td>
+                    <td><input type="number" id="tribalQuantity" value="0" min="0" onchange="calculateTotal('tribal')"></td>
+                    <td><span id="tribalTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Halter Top</span>
+        <img src="D:\ITEC87_PROJECT\images\halter top.jpg" alt="sando" class="item-image">
+    </div>
+</td>
+                    <td><b>100.00</td>
+                    <td><span id="drifitStocks">50</span></td>
+                    <td><input type="number" id="drifitQuantity" value="0" min="0" onchange="calculateTotal('drifit')"></td>
+                    <td><span id="drifitTotal">0</span></td>
+                </tr>
+				 <tr>
+                    <td><span class="item-name"><b>Muscle Tanks</span>
+        <img src="D:\ITEC87_PROJECT\images\muscle tanks.jpg" alt="sando" class="item-image">
+    </div>
+</td>
+                    <td><b>100.00</td>
+                    <td><span id="spandexStocks">50</span></td>
+                    <td><input type="number" id="spandexQuantity" value="0" min="0" onchange="calculateTotal('spandex')"></td>
+                    <td><span id="spandexTotal">0</span></td>
+                </tr>
+				<tr>
+                    <td><span class="item-name"><b>Board Games</span>
+         <img src="D:\ITEC87_PROJECT\images\board games.jpg" alt="toys" class="item-image">
+    </div>
+</td>
+                    <td><b>100.00</td>
+                    <td><span id="plainStocks">50</span></td>
+                    <td><input type="number" id="plainQuantity" value="0" min="0" onchange="calculateTotal('plain')"></td>
+                    <td><span id="plainTotal">0</span></td>
+                </tr>
+				<tr>
+                    <td><span class="item-name"><b>Dolls</span>
+       <img src="D:\ITEC87_PROJECT\images\dolls.jpg" alt="toys" class="item-image">
+    </div>
+</td>
+                    <td><b>850.00</td>
+                    <td><span id="nerfStocks">50</span></td>
+                    <td><input type="number" id="nerfQuantity" value="0" min="0" onchange="calculateTotal('nerf')"></td>
+                    <td><span id="nerfTotal">0</span></td>
+                </tr>
+				<tr>
+                    <td><span class="item-name"><b>Lego</span>
+        <img src="D:\ITEC87_PROJECT\images\lego.jpg" alt="toys" class="item-image">
+    </div>
+</td>
+                    <td><b>450.00</td>
+                    <td><span id="legoStocks">50</span></td>
+                    <td><input type="number" id="legoQuantity" value="0" min="0" onchange="calculateTotal('lego')"></td>
+                    <td><span id="legoTotal">0</span></td>
+                </tr>
+				<tr>
+                    <td><span class="item-name"><b>Stuffed Toys</span>
+       <img src="D:\ITEC87_PROJECT\images\stuffed toys.jpg" alt="toys" class="item-image">
+    </div>
+</td>
+                    <td><b>500.00</td>
+                    <td><span id="ballsStocks">50</span></td>
+                    <td><input type="number" id="ballsQuantity" value="0" min="0" onchange="calculateTotal('balls')"></td>
+                    <td><span id="ballsTotal">0</span></td>
+                </tr>
+				<tr>
+                    <td><span class="item-name"><b>Action Figures</span>
+       <img src="D:\ITEC87_PROJECT\images\action figures.jpg" alt="toys" class="item-image">
+
+    </div>
+</td>
+                    <td><b>800.00</td>
+                    <td><span id="figuresStocks">50</span></td>
+                    <td><input type="number" id="figuresQuantity" value="0" min="0" onchange="calculateTotal('figures')"></td>
+                    <td><span id="figuresTotal">0</span></td>
+                </tr>	
+				
+				
+				
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right">Total:</td>
+                    <td><span id="totalAmount">0</span> PHP</td>
+<td><button onclick="goToStockAndDiscounts()">Discounts</button></td>
+
+
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <script>
+function goToStockAndDiscounts() {
+        window.location.href = "discounts.html";
+    }
+        function calculateTotal(item) {
+            var price = 0;
+            var stocks = 0;
+            var quantity = parseInt(document.getElementById(item + 'Quantity').value);
+
+            switch(item) {
+                case 'straight':
+                    price = 800;
+                    stocks = 50;
+                    break;
+                case 'slim':
+                    price = 750;
+                    stocks = 50;
+                    break;
+                case 'wide':
+                    price = 850;
+                    stocks = 50;
+                    break;
+                case 'flared':
+                    price = 850;
+                    stocks = 50;
+                    break;
+				case 'os':
+                    price = 200;
+                    stocks = 50;
+                    break;
+				case 'fit':
+                    price = 400;
+                    stocks = 50;
+                    break;
+				case 'henley':
+                    price = 350;
+                    stocks = 50;
+                    break;
+				case 'v':
+                    price = 250;
+                    stocks = 50;
+                    break;
+				case 'mists':
+                    price = 200;
+                    stocks = 50;
+                    break;
+				case 'perfume':
+                    price = 350;
+                    stocks = 50;
+                    break;
+				case 'cologne':
+                    price = 150;
+                    stocks = 50;
+                    break;
+				case 'fraiche':
+                    price = 400;
+                    stocks = 50;
+                    break;
+				case 'muscle':
+                    price = 150;
+                    stocks = 50;
+                    break;
+				case 'tribal':
+                    price = 100;
+                    stocks = 50;
+                    break;
+				case 'drifit':
+                    price = 100;
+                    stocks = 50;
+                    break;
+				case 'spandex':
+                    price = 100;
+                    stocks = 50;
+                    break;
+				case 'plain':
+                    price = 1000;
+                    stocks = 50;
+                    break;
+				case 'nerf':
+                    price = 850;
+                    stocks = 50;
+                    break;
+				case 'lego':
+                    price = 450;
+                    stocks = 50;
+                    break;
+				case 'balls':
+                    price = 500;
+                    stocks = 50;
+                    break;
+				case 'figures':
+                    price = 800;
+                    stocks = 50;
+                    break;
+            }
+
+            var totalStocks = stocks - quantity;
+            document.getElementById(item + 'Stocks').innerText = totalStocks;
+
+            var total = price * quantity;
+            document.getElementById(item + 'Total').innerText = total.toFixed(2);
+
+            updateTotalAmount();
+        }
+
+        function updateTotalAmount() {
+            var straightTotal = parseFloat(document.getElementById('straightTotal').innerText);
+            var slimTotal = parseFloat(document.getElementById('slimTotal').innerText);
+            var wideTotal = parseFloat(document.getElementById('wideTotal').innerText);
+			var flaredTotal = parseFloat(document.getElementById('flaredTotal').innerText);
+            var osTotal = parseFloat(document.getElementById('osTotal').innerText);
+            var fitTotal = parseFloat(document.getElementById('fitTotal').innerText);
+			var henleyTotal = parseFloat(document.getElementById('henleyTotal').innerText);
+            var vTotal = parseFloat(document.getElementById('vTotal').innerText);
+            var mistsTotal = parseFloat(document.getElementById('mistsTotal').innerText);
+			var perfumeTotal = parseFloat(document.getElementById('perfumeTotal').innerText);
+            var cologneTotal = parseFloat(document.getElementById('cologneTotal').innerText);
+            var fraicheTotal = parseFloat(document.getElementById('fraicheTotal').innerText);
+			var muscleTotal = parseFloat(document.getElementById('muscleTotal').innerText);
+            var tribalTotal = parseFloat(document.getElementById('tribalTotal').innerText);
+            var drifitTotal = parseFloat(document.getElementById('drifitTotal').innerText);
+			var spandexTotal = parseFloat(document.getElementById('spandexTotal').innerText);
+            var plainTotal = parseFloat(document.getElementById('plainTotal').innerText);
+            var nerfTotal = parseFloat(document.getElementById('nerfTotal').innerText);
+			var legoTotal = parseFloat(document.getElementById('legoTotal').innerText);
+            var ballsTotal = parseFloat(document.getElementById('ballsTotal').innerText);
+            var figuresTotal = parseFloat(document.getElementById('figuresTotal').innerText);
+
+            var totalAmount = straightTotal + slimTotal + wideTotal + flaredTotal + osTotal + fitTotal + henleyTotal + vTotal + mistsTotal + perfumeTotal + cologneTotal + fraicheTotal + muscleTotal + tribalTotal + drifitTotal + spandexTotal + plainTotal + nerfTotal + legoTotal + ballsTotal + figuresTotal;
+            document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
+
+    localStorage.setItem('totalAmount', totalAmount);
+}
+    </script>
+</body>
+</html>

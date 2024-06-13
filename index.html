@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ken Natanawan Project</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        .button-container {
+            text-align: center;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 240px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 18px;
+            color: white;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            border-radius: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            box-shadow: 0 8px 20px rgba(37, 117, 252, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="location.href='resume.html'" aria-label="Page 1">CV/RESUME</button>
+        <button onclick="location.href='rog.html'" aria-label="Page 2">ROG</button>
+        <button onclick="location.href='RestrurantMenu.html'" aria-label="Page 3">RESTURANT MENU</button>
+        <button onclick="location.href='NATANAWAN_SARI_SARI_STORE.html'" aria-label="Page 4">SARI-SARI STORE</button>
+    </div>
+</body>
+</html>

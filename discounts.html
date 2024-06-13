@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            font-family: cursive;
+        }
+        .discount {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Available Discounts</h2>
+        <select id="discountType" onchange="calculateDiscount()">
+            <option value="regular">Regular</option>
+            <option value="senior">Senior Discount</option>
+            <option value="pwd">PWD Discount</option>
+            <option value="student">Student Discount</option>
+        </select>
+        <div class="discount" id="discount"></div>
+        <div class="discount" id="discountedPrice"></div>
+    </div>
+
+    <script>
+        function calculateDiscount() {
+            var totalAmount = parseFloat(localStorage.getItem('totalAmount'));
+            var discountType = document.getElementById('discountType').value;
+            var discountPercentage = 0;
+
+            switch(discountType) {
+                case 'senior':
+                    discountPercentage = 0.20;
+                    break;
+                case 'pwd':
+                    discountPercentage = 0.30;
+                    break;
+                case 'student':
+                    discountPercentage = 0.10;
+                    break;
+                default:
+                    break;
+            }
+
+            var discountAmount = totalAmount * discountPercentage;
+            var discountedPrice = totalAmount - discountAmount;
+
+            document.getElementById('discount').innerText = discountType.charAt(0).toUpperCase() + discountType.slice(1) + " Discount (" + (discountPercentage * 100) + "%): PHP " + discountAmount.toFixed(2);
+            document.getElementById('discountedPrice').innerText = "Discounted Price: PHP " + discountedPrice.toFixed(2);
+        }
+
+        // Call calculateDiscount initially
+        calculateDiscount();
+    </script>
+</body>
+</html>

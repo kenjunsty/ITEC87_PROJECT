@@ -1,0 +1,156 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Menu</title> 
+<style>
+.container { 		
+	position: relative; 		
+	width: 1020px; 		
+	height: auto; 		
+	border: 5px solid black; 		
+	padding: 5px; 		
+	margin: 0 auto; 		 
+	background-color: orange; 		 
+	display: absolute; 		 
+	align-items: center; 
+} 	
+.button-style { 		
+	position: absolute; 		
+	display: block; 		
+	border: 2px solid black; 		
+	padding: 5px; 		
+	margin: 0 auto; 	} 	 
+.button { 		
+	border: 2px solid black; 		
+	padding: 10px 20px; 		
+	color: black; 		
+	width: 195px; 		
+	cursor: pointer; 		
+	font-weight: bold; 		
+	background-color: white; 		
+	text-align: center; 		
+	text-decoration: none; 		
+	display: inline-block; 		
+	font-size: 20px; 		
+	margin: 4px 2px; 		
+	border-radius: 10px; 		
+	transition-duration: 0.6s; 	 
+} .button:hover { 
+	background-color: orange; 
+}  
+h2 {
+	font-size: 40px;
+	margin-top: 0;
+	color: black;
+	text-align: center;
+	margin-bottom: 0;
+}
+.menu-item{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+}
+.menu-item img{
+	width: 150px;
+	height: 150px;
+	margin-right: 50px;
+	margin-left: 50px;
+	border-radius: 10px;
+}
+.menu-category.active{
+display: block;
+order: -1;
+}
+.center{
+	display: flex;
+	justify-content: center;
+	align-tems: center;
+	height: 100vh;
+}
+p { 		font-size: 20px; 	
+	margin: 0; 	
+		color: white; 	 
+			}
+h3 { 		
+font-size: 30px; 		
+margin: 0; 	
+	color: white; 
+	} 
+</style> 
+</head> 
+<body> 
+<div class="bg"> <div class="container"> 	
+
+<h1 align="center" style="font-size:100px; ">RESTURANT MENU</h1>
+
+<button class="button" onclick="document.getElementById('main-dishes').scrollIntoView();">MAIN DISHES</button>
+    <button class="button"onclick="document.getElementById('vegetables').scrollIntoView();">VEGETABLES</button>
+    <button class="button"onclick="document.getElementById('deserts').scrollIntoView();">DESERT</button>
+    <button class="button"onclick="document.getElementById('drinks').scrollIntoView();">DRINKS</button>
+    <button class="button"onclick="document.getElementById('adds-on').scrollIntoView();">ADDS-ON</button>
+<br>
+<hr>
+
+<div id="menu">
+    <div class="menu-category" id="main-dishes">
+        <h2>Main Dishes</h2>
+        <div class="menu-item"><input type="checkbox" name="dish" value="149"><img src="D:\ITEC87_PROJECT\images\adobo.jpeg">ADOBO----------149.00</div>
+        <div class="menu-item"><input type="checkbox" name="dish" value="159"><img src="D:\ITEC87_PROJECT\images\mechado.jpeg">MECHADO-----------149.00</div>
+        <div class="menu-item"><input type="checkbox" name="dish" value="169"><img src="D:\ITEC87_PROJECT\images\pochero.jpeg">POCHERO----------169.00</div>
+        <div class="menu-item"><input type="checkbox" name="dish" value="189"><img src="D:\ITEC87_PROJECT\images\karekare.jpeg">KARE-KARE----------189.00</div>
+        <div class="menu-item"><input type="checkbox" name="dish" value="159"><img src="D:\ITEC87_PROJECT\images\sinigang.jpeg">SINIGANG----------159.00</div>
+    </div>
+<hr>
+<div class="menu-category" id="vegetables">
+        <h2>Vegetables</h2>
+        <div class="menu-item"><input type="checkbox" name="vegetable" value="169"><img src="D:\ITEC87_PROJECT\images\chopsuey.jpeg"> CHOP SUEY----------169.00</div>
+        <div class="menu-item"><input type="checkbox" name="vegetable" value="149"><img src="D:\ITEC87_PROJECT\images\munggo.jpeg"> GINISANG MUNGGO----------149.00</div>
+        <div class="menu-item"><input type="checkbox" name="vegetable" value="159"><img src="D:\ITEC87_PROJECT\images\pancit.jpeg"> PANCIT BIHON----------159.00</div>
+    </div>
+<hr>
+
+    <div class="menu-category" id="deserts">
+        <h2>Deserts</h2>
+        <div class="menu-item"><input type="checkbox" name="desert" value="120"><img src="D:\ITEC87_PROJECT\images\halohalo.jpeg"> HALO-HALO----------120.00</div>
+        <div class="menu-item"><input type="checkbox" name="desert" value="130"><img src="D:\ITEC87_PROJECT\images\lecheflan.jpeg">LECHE FLAN----------130.00</div>
+        <div class="menu-item"><input type="checkbox" name="desert" value="125"><img src="D:\ITEC87_PROJECT\images\ube.jpeg"> PURPLE YAM JAM----------125.00</div>
+    </div>
+<hr>
+
+    <div class="menu-category" id="drinks">
+        <h2>Drinks</h2>
+        <div class="menu-item"><input type="checkbox" name="drink" value="99"><img src="D:\ITEC87_PROJECT\images\buko.jpeg"> BUKO JUICE----------99.00</div>
+        <div class="menu-item"><input type="checkbox" name="drink" value="99"><img src="D:\ITEC87_PROJECT\images\calamansi.jpeg"> CALAMANSI JUICE----------99.00</div>
+        <div class="menu-item"><input type="checkbox" name="drink" value="110"><img src="D:\ITEC87_PROJECT\images\avocado.jpeg"> AVOCADO MILKSHAKE----------110</div>
+    </div>
+<hr>
+    <div class="menu-category" id="adds-on">
+        <h2>Adds On</h2>
+        <div class="menu-item"><input type="checkbox" name="addon" value="149"><img src="D:\ITEC87_PROJECT\images\lumpia.jpeg"> LUMPIA----------149.00</div>
+        <div class="menu-item"><input type="checkbox" name="addon" value="169"><img src="D:\ITEC87_PROJECT\images\cucumber.jpeg"> CUCUMBER SALAD----------169.00</div>
+        <div class="menu-item"><input type="checkbox" name="addon" value="159"><img src="D:\ITEC87_PROJECT\images\friedrice.jpeg">FRIED RICE----------159.00</div><hr>
+    </div>
+
+    <div>
+       
+        <button class="button"onclick="calculateTotal()">Get Total</button>
+    </div>
+
+    <p id="total"></p>
+</div>
+
+<script>
+    function calculateTotal() {
+        const checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+        let total = 0;
+        checkboxes.forEach((checkbox) => {
+            total += parseFloat(checkbox.value);
+        });
+        document.getElementById('total').innerText = 'Total: ' + total.toFixed(2);
+    }
+</script>
+</body>
+</html>
